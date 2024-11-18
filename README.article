@@ -51,14 +51,17 @@ maximum flexibility for using protocols with revenue.
 is needed to be serviced for this system generally, an extra layer of
 lending provides the using protocol an extra revenue opportunity.
 
-2. A non-linear interest curve on repayments to incentivise a "setup
-window" in line with staking functionality on depending protocols to
-incentive gradual allocations into protocols. This is optionally possible
-with configuration via the Debt NFT with different repayment buckets.
+2. A fully optional non-linear interest curve on repayments to incentivise
+a "setup window" in line with staking functionality on depending protocols
+to incentive gradual allocations into protocols. The interest repayment
+is optionally claimed with a custom NFT.
 
 3. A simple `collect(uint256[] ids,address recipient)` to collect
 simply any yield accumulated on a staked asset since creation using a
 NFT created when wrapping.
+
+4. Zero fees for the ARBUSD protocol. Entirely governed by the Arbitrum
+DAO.
 
 ## User experience
 
