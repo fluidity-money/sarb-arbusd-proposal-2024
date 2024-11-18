@@ -1,0 +1,82 @@
+# ARBUSD proposal
+
+@baygeeth
+
+Mon 18 Nov 2024
+
+https://superposition.so
+
+## Introduction
+
+ARB is about to become a productive asset (outside of governance)
+with the staked ARB proposal. Indeed, some teams, including
+Fluidity Labs ([Superposition](https://superposition.so)/[Fluidity
+Money](https://fluidity.money)), are planning on bootstrapping the
+Arbitrum community at large's expertise and economic power for their
+9lives oracle infrastructure.
+
+The binary use of ARB as a staked asset with different protocols leaves
+a few verticals on the table:
+
+1. Optional productive pressure on interest repayments. Protocols could
+opt into forcing staked assets vested to generate a return to be usable
+in their system.
+
+2. Looping of staked ARB for extra yield on established protocols. Staked
+ARB could be easily looped in the protocol context for greater yield.
+
+3. Optional protocol spread on ARB value accrual. Easy access to a single,
+unified interface which can be leveraged alongside the ability to collect
+yield alongside lending as a simple `collect(uint256[],address)`.
+
+4. Some resistence to ARB price shocks. A staked asset that is presumably
+adjusted for any shortfalls in value with ARB for universal ease of use.
+
+## Proposal
+
+We propose a simple stablecoin public good asset powered by a lending
+market to compensate for these shortcomings.
+
+## Philosophy
+
+A very simple to use with zero fees taken proxy to ARB exposure with
+maximum flexibility for using protocols with revenue.
+
+### The goals
+
+1. Every asset supplied is lent on an lending protocol. Though debt
+is needed to be serviced for this system generally, an extra layer of
+lending provides the using protocol an extra revenue opportunity.
+
+2. A non-linear interest curve on repayments to incentivise a "setup
+window" in line with staking functionality on depending protocols to
+incentive gradual allocations into protocols.
+
+3. A simple `collect(uint256[] ids,address recipient)` to collect
+simply any yield accumulated on a staked asset since creation using a
+NFT created when wrapping.
+
+## User experience
+
+### High level
+
+.image graph.svg 500 0
+
+#### Simplified
+
+1. Wrapping your Staked ARB to ARBUSD sends you two NFTs. Interest is
+needed to pay for the stablecoin a la LUSD.
+
+2. The "Debt NFT" is used to service repayments for the token's debt. It
+should be sent to the caller.
+
+3. The "Yield NFT" is kept by the protocol, and entitles it to yield
+paid for lending, and for positive price increases since wrapping.
+
+4. Debt is repaid according to a non linear curve with a initial cliff
+to incentivise small amounts being created.
+
+5. The protocol pays the holder for participating in their staked
+system. It presumably either takes the yield (and pays it to the user), or
+optionally subsidises a security fund (for example), or simply takes the
+yield as revenue. This way, the protocol itself could avoid taking a fee.
