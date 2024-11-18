@@ -54,7 +54,7 @@ lending provides the using protocol an extra revenue opportunity.
 2. A non-linear interest curve on repayments to incentivise a "setup
 window" in line with staking functionality on depending protocols to
 incentive gradual allocations into protocols. This is optionally possible
-with configuration via the Debt NFT.
+with configuration via the Debt NFT with different repayment buckets.
 
 3. A simple `collect(uint256[] ids,address recipient)` to collect
 simply any yield accumulated on a staked asset since creation using a
@@ -95,6 +95,6 @@ in 9lives Infrastructure Markets, a oracle market based on ARB. He goes
 to the 9lives Staking Module, and receives SNINE, a token with slashing
 capabilities. Behind the scenes, the Staking Module vested his Staked
 ARB into ARBUSD. The ARBUSD the protocol received also creates a "Yield
-NFT", and a "Debt NFT". The Debt NFT is sent to Erik. The Debt NFT is
-a representation of repayment that should be made, and is needed for him to receive
-his ARB back.
+NFT", and a "Debt NFT". The Debt NFT is sent to Erik. The Debt NFT is a
+representation of repayment that should be made, and is needed for him
+to receive his ARB back.
