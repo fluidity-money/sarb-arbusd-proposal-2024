@@ -25,9 +25,12 @@ in their system.
 2. Looping of staked ARB for extra yield on established protocols. Staked
 ARB could be easily looped in the protocol context for greater yield.
 
-3. Optional protocol spread on ARB value accrual. Easy access to a single,
-unified interface which can be leveraged alongside the ability to collect
-yield alongside lending as a simple `collect(uint256[],address)`.
+3. Optional protocol spread on ARB value accrual. Easy access
+to a single, unified interface which can be leveraged alongside
+the ability to collect yield alongside lending as a simple
+`collect(uint256[],address)`. Guaranteed repayment from the caller
+by conversion back to the user using the `redeem(uint256[])` feature,
+which takes a special NFT as argument.
 
 4. Some resistence to ARB price shocks. A staked asset that is presumably
 adjusted for any shortfalls in value with ARB for universal ease of use.
@@ -62,18 +65,7 @@ NFT created when wrapping.
 
 .image graph.svg 500 0
 
-	strict digraph {
-		ARB -> DAO -> "Staked ARB" [label="Create staked ARB"]
-		"Staked ARB" -> Caller
-		Caller -> ARBUSD [label=""]
-		ARBUSD -> "Collect NFT" -> Caller [label="Sends a Collect NFT"]
-		ARBUSD -> "Debt NFT" -> Caller [label="Sends a debt NFT"]
-		Caller -> "Debt NFT" [label="Repays interest"]
-		ARBUSD -> Protocol [label="Sends ARBUSD"]
-		ARBUSD -> "Collect NFT" [label="Collects revenue"]
-		Protocol -> Caller [lablel="Sends revenue from utilisation"]
-		Caller -> Protocol [label="Inputs to protocol"]
-	}
+.code digraph.dot
 
 #### Simplified
 
@@ -93,3 +85,15 @@ to incentivise small amounts being created.
 system. It presumably either takes the yield (and pays it to the user), or
 optionally subsidises a security fund (for example), or simply takes the
 yield as revenue. This way, the protocol itself could avoid taking a fee.
+
+### A user story
+
+Erik is a devoted ARB DAO participant, and wants to extract value from
+his newly Staked ARB beyond just lending it out. He goes to participate
+in 9lives Infrastructure Markets, a oracle market based on ARB. He goes
+to the 9lives Staking Module, and receives SNINE, a token with slashing
+capabilities. Behind the scenes, the Staking Module vested his Staked
+ARB into ARBUSD. The ARBUSD the protocol received also creates a "Yield
+NFT", and a "Debt NFT". The Debt NFT is sent to Erik. The Debt NFT is
+a representation of repayment that should be made, and is needed for him to receive
+his ARB back.
