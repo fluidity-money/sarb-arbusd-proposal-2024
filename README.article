@@ -62,6 +62,19 @@ NFT created when wrapping.
 
 .image graph.svg 500 0
 
+	strict digraph {
+		ARB -> DAO -> "Staked ARB" [label="Create staked ARB"]
+		"Staked ARB" -> Caller
+		Caller -> ARBUSD [label=""]
+		ARBUSD -> "Collect NFT" -> Caller [label="Sends a Collect NFT"]
+		ARBUSD -> "Debt NFT" -> Caller [label="Sends a debt NFT"]
+		Caller -> "Debt NFT" [label="Repays interest"]
+		ARBUSD -> Protocol [label="Sends ARBUSD"]
+		ARBUSD -> "Collect NFT" [label="Collects revenue"]
+		Protocol -> Caller [lablel="Sends revenue from utilisation"]
+		Caller -> Protocol [label="Inputs to protocol"]
+	}
+
 #### Simplified
 
 1. Wrapping your Staked ARB to ARBUSD sends you two NFTs. Interest is
