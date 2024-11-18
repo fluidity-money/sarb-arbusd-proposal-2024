@@ -53,7 +53,8 @@ lending provides the using protocol an extra revenue opportunity.
 
 2. A non-linear interest curve on repayments to incentivise a "setup
 window" in line with staking functionality on depending protocols to
-incentive gradual allocations into protocols.
+incentive gradual allocations into protocols. This is optionally possible
+with configuration via the Debt NFT.
 
 3. A simple `collect(uint256[] ids,address recipient)` to collect
 simply any yield accumulated on a staked asset since creation using a
